@@ -129,3 +129,5 @@ CREATE TABLE type_visa_documents(
                                     FOREIGN KEY(Id_type_visa) REFERENCES type_visa(Id_type_visa),
                                     FOREIGN KEY(Id_documents_types) REFERENCES documents_types(Id_documents_types)
 );
+
+
