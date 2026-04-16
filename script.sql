@@ -102,10 +102,30 @@ CREATE TABLE visa_transformable(
                                    FOREIGN KEY(Id_etat_civil) REFERENCES etat_civil(Id_etat_civil)
 );
 
+CREATE TABLE demandeur_documents_types(
+                                          Id_demandeur_documents SERIAL,
+                                          is_ok BOOLEAN,
+                                          Id_documents_types INTEGER NOT NULL,
+                                          Id_demandeur INTEGER NOT NULL,
+                                          PRIMARY KEY(Id_demandeur_documents),
+                                          FOREIGN KEY(Id_documents_types) REFERENCES documents_types(Id_documents_types),
+                                          FOREIGN KEY(Id_demandeur) REFERENCES demandeur(Id_demandeur)
+);
+
+CREATE TABLE demandeur_documents_communs(
+                                            Id_demandeur_documents_communs SERIAL,
+                                            is_ok BOOLEAN,
+                                            Id_demandeur INTEGER NOT NULL,
+                                            Id_documents_commune INTEGER NOT NULL,
+                                            PRIMARY KEY(Id_demandeur_documents_communs),
+                                            FOREIGN KEY(Id_demandeur) REFERENCES demandeur(Id_demandeur),
+                                            FOREIGN KEY(Id_documents_commune) REFERENCES documents_communs(Id_documents_commune)
+);
+
 CREATE TABLE type_visa_documents(
-                        Id_type_visa INTEGER,
-                        Id_documents_types INTEGER,
-                        PRIMARY KEY(Id_type_visa, Id_documents_types),
-                        FOREIGN KEY(Id_type_visa) REFERENCES type_visa(Id_type_visa),
-                        FOREIGN KEY(Id_documents_types) REFERENCES documents_types(Id_documents_types)
+                                    Id_type_visa INTEGER,
+                                    Id_documents_types INTEGER,
+                                    PRIMARY KEY(Id_type_visa, Id_documents_types),
+                                    FOREIGN KEY(Id_type_visa) REFERENCES type_visa(Id_type_visa),
+                                    FOREIGN KEY(Id_documents_types) REFERENCES documents_types(Id_documents_types)
 );
