@@ -17,3 +17,5 @@ Visa Transformable:
 -Date d'entree a mada et lieu
 -date exp.
 f
+
+\c

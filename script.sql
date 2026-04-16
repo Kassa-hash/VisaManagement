@@ -102,7 +102,7 @@ CREATE TABLE visa_transformable(
                                    FOREIGN KEY(Id_etat_civil) REFERENCES etat_civil(Id_etat_civil)
 );
 
-CREATE TABLE Asso_13(
+CREATE TABLE type_visa_documents(
                         Id_type_visa INTEGER,
                         Id_documents_types INTEGER,
                         PRIMARY KEY(Id_type_visa, Id_documents_types),

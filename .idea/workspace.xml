@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5ff7f6f-829a-420e-a489-f6d0916d097e" name="Changes" comment="" />
+    <list default="true" id="d5ff7f6f-829a-420e-a489-f6d0916d097e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/brouillon.txt" beforeDir="false" afterPath="$PROJECT_DIR$/brouillon.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visamanagement/visamanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/visamanagement/visamanagement/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,11 +52,12 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "Maven.visamanagement [clean,install].executor": "Run",
     "Maven.visamanagement [clean].executor": "Run",
+    "Maven.visamanagement [spring-boot:run].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Kassa",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/s6/VisaManagement"
@@ -63,6 +67,7 @@
     <option name="myCommands">
       <command value="mvn clean" />
       <command value="mvn clean install" />
+      <command value="mvn spring-boot:run" />
     </option>
   </component>
   <component name="SharedIndexes">
