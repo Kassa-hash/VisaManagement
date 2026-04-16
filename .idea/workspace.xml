@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5ff7f6f-829a-420e-a489-f6d0916d097e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/brouillon.txt" beforeDir="false" afterPath="$PROJECT_DIR$/brouillon.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visamanagement/visamanagement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/visamanagement/visamanagement/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +56,7 @@
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "sprint/1/NouvelleDemande/affichage",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/s6/VisaManagement"
