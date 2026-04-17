@@ -500,7 +500,7 @@
 
     <main class="form-card">
 
-        <form th:action="@{/demande}" method="POST" th:object="${demandeurDTO}" id="demandeForm">
+        <form th:action="@{/demande}" method="POST" th:object="${demandeurDTO}" id="demandeForm" novalidate>
 
             <!-- Afficher les erreurs globales -->
             <div th:if="${#fields.hasErrors('*')}" class="error-badge">
@@ -549,6 +549,12 @@
                         <input type="tel" id="contact" name="contact" th:field="*{contact}" placeholder="+261 32 00 000 00"
                                th:class="${#fields.hasErrors('contact')} ? 'is-invalid' : ''">
                         <span class="field-error" th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}"></span>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label" for="adresseMada">Adresse à Madagascar</label>
+                        <input type="text" id="adresseMada" name="adresseMada" th:field="*{adresseMada}" placeholder="Adresse actuelle ou future"
+                               th:class="${#fields.hasErrors('adresseMada')} ? 'is-invalid' : ''">
+                        <span class="field-error" th:if="${#fields.hasErrors('adresseMada')}" th:errors="*{adresseMada}"></span>
                     </div>
                 </div>
 

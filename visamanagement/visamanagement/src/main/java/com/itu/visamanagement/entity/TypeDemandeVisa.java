@@ -1,6 +1,7 @@
 package com.itu.visamanagement.entity;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "type_demande_visa")
@@ -13,6 +14,9 @@ public class TypeDemandeVisa {
 
     @Column(name = "libelle", length = 50)
     private String libelle;
+
+    @OneToMany(mappedBy = "typeDemandeVisa", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Demande> demandes;
 
     // Constructors
     public TypeDemandeVisa() {
@@ -37,6 +41,14 @@ public class TypeDemandeVisa {
 
     public void setLibelle(String libelle) {
         this.libelle = libelle;
+    }
+
+    public java.util.List<Demande> getDemandes() {
+        return demandes;
+    }
+
+    public void setDemandes(java.util.List<Demande> demandes) {
+        this.demandes = demandes;
     }
 
     @Override

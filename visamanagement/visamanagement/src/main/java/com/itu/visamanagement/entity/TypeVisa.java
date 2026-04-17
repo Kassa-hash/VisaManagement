@@ -16,7 +16,7 @@ public class TypeVisa {
     private String libelle;
 
     @OneToMany(mappedBy = "typeVisa", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Demandeur> demandeurs;
+    private List<Demande> demandes;
 
     // Constructors
     public TypeVisa() {
@@ -43,12 +43,12 @@ public class TypeVisa {
         this.libelle = libelle;
     }
 
-    public List<Demandeur> getDemandeurs() {
-        return demandeurs;
+    public List<Demande> getDemandes() {
+        return demandes;
     }
 
-    public void setDemandeurs(List<Demandeur> demandeurs) {
-        this.demandeurs = demandeurs;
+    public void setDemandes(List<Demande> demandes) {
+        this.demandes = demandes;
     }
 
     @Override

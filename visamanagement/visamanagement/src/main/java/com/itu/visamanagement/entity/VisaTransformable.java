@@ -24,21 +24,26 @@ public class VisaTransformable {
     @Column(name = "date_expiration")
     private LocalDate dateExpiration;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Id_etat_civil", nullable = false, unique = true)
-    private EtatCivil etatCivil;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Id_passeport", nullable = false)
+    private Passeport passeport;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Id_demandeur", nullable = false)
+    private Demandeur demandeur;
 
     // Constructors
     public VisaTransformable() {
     }
 
     public VisaTransformable(String reference, LocalDate dateEntreeMada, String lieu,
-            LocalDate dateExpiration, EtatCivil etatCivil) {
+            LocalDate dateExpiration, Passeport passeport, Demandeur demandeur) {
         this.reference = reference;
         this.dateEntreeMada = dateEntreeMada;
         this.lieu = lieu;
         this.dateExpiration = dateExpiration;
-        this.etatCivil = etatCivil;
+        this.passeport = passeport;
+        this.demandeur = demandeur;
     }
 
     // Getters and Setters
@@ -82,12 +87,20 @@ public class VisaTransformable {
         this.dateExpiration = dateExpiration;
     }
 
-    public EtatCivil getEtatCivil() {
-        return etatCivil;
+    public Passeport getPasseport() {
+        return passeport;
     }
 
-    public void setEtatCivil(EtatCivil etatCivil) {
-        this.etatCivil = etatCivil;
+    public void setPasseport(Passeport passeport) {
+        this.passeport = passeport;
+    }
+
+    public Demandeur getDemandeur() {
+        return demandeur;
+    }
+
+    public void setDemandeur(Demandeur demandeur) {
+        this.demandeur = demandeur;
     }
 
     @Override

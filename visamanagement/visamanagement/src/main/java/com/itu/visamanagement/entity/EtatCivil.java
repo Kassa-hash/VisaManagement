@@ -33,6 +33,9 @@ public class EtatCivil {
     @Column(name = "contact", length = 50)
     private String contact;
 
+    @Column(name = "adresse_mada", length = 50)
+    private String adresseMada;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Id_situation_familiale", nullable = false)
     private SituationFamiliale situationFamiliale;
@@ -52,12 +55,6 @@ public class EtatCivil {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Id_demandeur", nullable = false, unique = true)
     private Demandeur demandeur;
-
-    @OneToOne(mappedBy = "etatCivil", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Passeport passeport;
-
-    @OneToOne(mappedBy = "etatCivil", cascade = CascadeType.ALL, orphanRemoval = true)
-    private VisaTransformable visaTransformable;
 
     // Constructors
     public EtatCivil() {
@@ -139,6 +136,14 @@ public class EtatCivil {
         this.contact = contact;
     }
 
+    public String getAdresseMada() {
+        return adresseMada;
+    }
+
+    public void setAdresseMada(String adresseMada) {
+        this.adresseMada = adresseMada;
+    }
+
     public SituationFamiliale getSituationFamiliale() {
         return situationFamiliale;
     }
@@ -177,22 +182,6 @@ public class EtatCivil {
 
     public void setDemandeur(Demandeur demandeur) {
         this.demandeur = demandeur;
-    }
-
-    public Passeport getPasseport() {
-        return passeport;
-    }
-
-    public void setPasseport(Passeport passeport) {
-        this.passeport = passeport;
-    }
-
-    public VisaTransformable getVisaTransformable() {
-        return visaTransformable;
-    }
-
-    public void setVisaTransformable(VisaTransformable visaTransformable) {
-        this.visaTransformable = visaTransformable;
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.itu.visamanagement.dto;
 
 import java.time.LocalDate;
 import jakarta.validation.constraints.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class DemandeurDTO {
 
@@ -15,6 +16,7 @@ public class DemandeurDTO {
     private String nomJeuneFille;
 
     @NotNull(message = "La date de naissance est requise")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateNaissance;
 
     private String lieuNaissance;
@@ -25,6 +27,8 @@ public class DemandeurDTO {
 
     @NotBlank(message = "Le contact est requis")
     private String contact;
+
+    private String adresseMada;
 
     @NotNull(message = "Le sexe est requis")
     private Integer idSexe;
@@ -43,15 +47,19 @@ public class DemandeurDTO {
     private String numeroPasseport;
 
     @NotNull(message = "La date de délivrance est requise")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateDelivrancePasseport;
 
     @NotNull(message = "La date d'expiration est requise")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateExpirationPasseport;
 
     // ═══ ÉTAPE 3 : Visa transformable ═══
     private String referenceVisa;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateEntreeMada;
     private String lieuEntree;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateExpirationVisa;
 
     // ═══ ÉTAPE 4 : Type de visa ═══
@@ -125,6 +133,14 @@ public class DemandeurDTO {
 
     public void setContact(String contact) {
         this.contact = contact;
+    }
+
+    public String getAdresseMada() {
+        return adresseMada;
+    }
+
+    public void setAdresseMada(String adresseMada) {
+        this.adresseMada = adresseMada;
     }
 
     public Integer getIdSexe() {

@@ -15,31 +15,24 @@ public class Demandeur {
     @Column(name = "code", length = 50)
     private String code;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Id_type_visa", nullable = false)
-    private TypeVisa typeVisa;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Id_type_demande_visa", nullable = false)
-    private TypeDemandeVisa typeDemandeVisa;
-
     @OneToOne(mappedBy = "demandeur", cascade = CascadeType.ALL, orphanRemoval = true)
     private EtatCivil etatCivil;
 
     @OneToMany(mappedBy = "demandeur", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DemandeurDocumentsTypes> documentsTypes;
+    private List<Passeport> passeports;
 
     @OneToMany(mappedBy = "demandeur", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DemandeurDocumentsCommuns> documentsCommuns;
+    private List<VisaTransformable> visasTransformables;
+
+    @OneToMany(mappedBy = "demandeur", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Demande> demandes;
 
     // Constructors
     public Demandeur() {
     }
 
-    public Demandeur(String code, TypeVisa typeVisa, TypeDemandeVisa typeDemandeVisa) {
+    public Demandeur(String code) {
         this.code = code;
-        this.typeVisa = typeVisa;
-        this.typeDemandeVisa = typeDemandeVisa;
     }
 
     // Getters and Setters
@@ -59,22 +52,6 @@ public class Demandeur {
         this.code = code;
     }
 
-    public TypeVisa getTypeVisa() {
-        return typeVisa;
-    }
-
-    public void setTypeVisa(TypeVisa typeVisa) {
-        this.typeVisa = typeVisa;
-    }
-
-    public TypeDemandeVisa getTypeDemandeVisa() {
-        return typeDemandeVisa;
-    }
-
-    public void setTypeDemandeVisa(TypeDemandeVisa typeDemandeVisa) {
-        this.typeDemandeVisa = typeDemandeVisa;
-    }
-
     public EtatCivil getEtatCivil() {
         return etatCivil;
     }
@@ -83,20 +60,28 @@ public class Demandeur {
         this.etatCivil = etatCivil;
     }
 
-    public List<DemandeurDocumentsTypes> getDocumentsTypes() {
-        return documentsTypes;
+    public List<Passeport> getPasseports() {
+        return passeports;
     }
 
-    public void setDocumentsTypes(List<DemandeurDocumentsTypes> documentsTypes) {
-        this.documentsTypes = documentsTypes;
+    public void setPasseports(List<Passeport> passeports) {
+        this.passeports = passeports;
     }
 
-    public List<DemandeurDocumentsCommuns> getDocumentsCommuns() {
-        return documentsCommuns;
+    public List<VisaTransformable> getVisasTransformables() {
+        return visasTransformables;
     }
 
-    public void setDocumentsCommuns(List<DemandeurDocumentsCommuns> documentsCommuns) {
-        this.documentsCommuns = documentsCommuns;
+    public void setVisasTransformables(List<VisaTransformable> visasTransformables) {
+        this.visasTransformables = visasTransformables;
+    }
+
+    public List<Demande> getDemandes() {
+        return demandes;
+    }
+
+    public void setDemandes(List<Demande> demandes) {
+        this.demandes = demandes;
     }
 
     @Override

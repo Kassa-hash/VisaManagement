@@ -1,7 +1,6 @@
 package com.itu.visamanagement.controller;
 
 import com.itu.visamanagement.dto.DemandeurDTO;
-import com.itu.visamanagement.entity.Demandeur;
 import com.itu.visamanagement.services.DemandeurService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,8 +42,8 @@ public class DemandeurController {
         }
 
         try {
-            Demandeur demandeur = demandeurService.createDemandeur(dto);
-            return "redirect:/demande/success?code=" + demandeur.getCode();
+            String code = demandeurService.createDemande(dto);
+            return "redirect:/demande/success?code=" + code;
         } catch (Exception e) {
             model.addAttribute("error", "Erreur lors de la création de la demande: " + e.getMessage());
             model.addAllAttributes(demandeurService.getLookupData());

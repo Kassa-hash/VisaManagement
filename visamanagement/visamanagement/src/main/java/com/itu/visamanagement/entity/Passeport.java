@@ -21,19 +21,19 @@ public class Passeport {
     @Column(name = "date_expiration")
     private LocalDate dateExpiration;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Id_etat_civil", nullable = false, unique = true)
-    private EtatCivil etatCivil;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Id_demandeur", nullable = false)
+    private Demandeur demandeur;
 
     // Constructors
     public Passeport() {
     }
 
-    public Passeport(String numero, LocalDate dateDelivrance, LocalDate dateExpiration, EtatCivil etatCivil) {
+    public Passeport(String numero, LocalDate dateDelivrance, LocalDate dateExpiration, Demandeur demandeur) {
         this.numero = numero;
         this.dateDelivrance = dateDelivrance;
         this.dateExpiration = dateExpiration;
-        this.etatCivil = etatCivil;
+        this.demandeur = demandeur;
     }
 
     // Getters and Setters
@@ -69,12 +69,12 @@ public class Passeport {
         this.dateExpiration = dateExpiration;
     }
 
-    public EtatCivil getEtatCivil() {
-        return etatCivil;
+    public Demandeur getDemandeur() {
+        return demandeur;
     }
 
-    public void setEtatCivil(EtatCivil etatCivil) {
-        this.etatCivil = etatCivil;
+    public void setDemandeur(Demandeur demandeur) {
+        this.demandeur = demandeur;
     }
 
     @Override
