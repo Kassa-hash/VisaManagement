@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande acceptée — Madagascar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+          --clr-bg: #f5f3ef;
+          --clr-surface: #ffffff;
+          --clr-border: #d8d4cc;
+          --clr-text: #1a1916;
+          --clr-text-muted: #6b6760;
+          --clr-success: #3a7d44;
+          --radius-xl: 16px;
+          --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+          --font-display: 'Libre Baskerville', Georgia, serif;
+          --font-body: 'DM Sans', system-ui, sans-serif;
+        }
+        html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+        body {
+          font-family: var(--font-body);
+          background-color: var(--clr-bg);
+          color: var(--clr-text);
+          min-height: 100vh;
+          padding: 2rem 1rem 5rem;
+        }
+        .page-wrapper { max-width: 600px; margin: 0 auto; }
+        .page-header { text-align: center; margin-bottom: 2.5rem; }
+        .page-header .flag-row {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          margin-bottom: 1.25rem;
+        }
+        .flag-stripe {
+          width: 32px;
+          height: 4px;
+          border-radius: 2px;
+        }
+        .flag-stripe.red { background: #fc3d32; }
+        .flag-stripe.green { background: #007b3a; }
+        .flag-stripe.white { background: #fff; border: 1px solid #d8d4cc; }
+        .page-header h1 {
+          font-family: var(--font-display);
+          font-size: 26px;
+          font-weight: 400;
+          font-style: italic;
+          color: var(--clr-text);
+          letter-spacing: 0.01em;
+          margin-bottom: 6px;
+        }
+        .page-header .subtitle {
+          font-size: 13px;
+          color: var(--clr-text-muted);
+          font-weight: 300;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+        }
+        .form-card {
+          background: var(--clr-surface);
+          border: 0.5px solid var(--clr-border);
+          border-radius: var(--radius-xl);
+          padding: 3rem 2.25rem;
+          box-shadow: var(--shadow-md);
+        }
+        .success-container {
+          text-align: center;
+        }
+        .success-icon {
+          width: 80px;
+          height: 80px;
+          background: #e8f5eb;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 32px;
+          margin: 0 auto 2rem;
+        }
+        .success-container h2 {
+          font-family: var(--font-display);
+          font-size: 22px;
+          font-weight: 400;
+          font-style: italic;
+          color: var(--clr-text);
+          margin-bottom: 12px;
+        }
+        .success-container p {
+          font-size: 14px;
+          color: var(--clr-text-muted);
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+        }
+        .ref-code {
+          display: inline-block;
+          font-family: monospace;
+          font-size: 15px;
+          font-weight: 700;
+          background: #f0ede8;
+          border: 0.5px solid var(--clr-border);
+          border-radius: 8px;
+          padding: 12px 24px;
+          margin: 1.5rem 0;
+          letter-spacing: 0.08em;
+          color: var(--clr-text);
+        }
+        .ref-label {
+          font-size: 11px;
+          color: var(--clr-text-muted);
+          margin-bottom: 6px;
+          text-transform: uppercase;
+          letter-spacing: 0.07em;
+        }
+        .action-buttons {
+          display: flex;
+          gap: 12px;
+          justify-content: center;
+          margin-top: 2.5rem;
+          padding-top: 2rem;
+          border-top: 0.5px solid var(--clr-border);
+        }
+        .btn {
+          height: 42px;
+          padding: 0 22px;
+          border: 0.5px solid var(--clr-border);
+          border-radius: 8px;
+          font-family: var(--font-body);
+          font-size: 14px;
+          font-weight: 500;
+          cursor: pointer;
+          background: var(--clr-surface);
+          color: var(--clr-text);
+          transition: background 0.15s, border-color 0.15s;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+        }
+        .btn:hover { background: #f0ede8; border-color: #9e9890; }
+        .btn-primary {
+          background: var(--clr-text);
+          color: #fff;
+          border-color: var(--clr-text);
+        }
+        .btn-primary:hover { background: #3a3830; border-color: #3a3830; }
+        @media (max-width: 620px) {
+          .form-card { padding: 2rem 1.5rem; }
+          .action-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <header class="page-header">
+        <div class="flag-row">
+            <span class="flag-stripe white"></span>
+            <span class="flag-stripe red"></span>
+            <span class="flag-stripe green"></span>
+        </div>
+        <h1>Demande soumise avec succès</h1>
+        <p class="subtitle">République de Madagascar — Direction de l'immigration</p>
+    </header>
+
+    <main class="form-card">
+        <div class="success-container">
+            <div class="success-icon">✓</div>
+            
+            <h2>Votre dossier a été enregistré</h2>
+            
+            <p>Félicitations ! Votre demande de visa long séjour a bien été reçue par les autorités de l'immigration de Madagascar.</p>
+            
+            <div class="ref-label">Votre numéro de référence</div>
+            <div class="ref-code" th:text="${demandeurCode}">D-2026-000001</div>
+            
+            <p><strong>Conservez ce numéro</strong>. Il vous permettra de suivre l'état d'avancement de votre dossier et de contacter les services d'immigration.</p>
+            
+            <p>Un email de confirmation a été envoyé à l'adresse fournie dans le formulaire. Votre dossier sera examiné sous <strong>15 jours ouvrés</strong>. Vous serez contacté pour la suite de la procédure.</p>
+            
+            <div class="action-buttons">
+                <a href="/" class="btn">← Retour à l'accueil</a>
+                <a href="/demande" class="btn btn-primary">Nouvelle demande →</a>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>
