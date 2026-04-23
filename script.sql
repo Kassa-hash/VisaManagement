@@ -36,13 +36,15 @@ CREATE TABLE type_visa(
 
 CREATE TABLE documents_communs(
                                   Id_documents_commune SERIAL,
-                                  libelle VARCHAR(50) ,
+                                  libelle VARCHAR(50),
+                                  is_obligatoire BOOLEAN,
                                   PRIMARY KEY(Id_documents_commune)
 );
 
 CREATE TABLE documents_types(
                                 Id_documents_types SERIAL,
                                 libelle VARCHAR(50) ,
+                                is_obligatoire BOOLEAN,
                                 PRIMARY KEY(Id_documents_types)
 );
 
